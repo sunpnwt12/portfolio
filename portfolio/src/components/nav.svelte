@@ -1,5 +1,5 @@
 <header class="sticky top-0">
-	<nav class="navbar sticky top-0 bg-base-300 drop-shadow-lg">
+	<nav class="navbar sticky top-0 bg-base-300 drop-shadow-md">
 		<div class="flex-1">
 			<a class="text-3xl normal-case btn btn-ghost py-0" title="Home" href="#home">SUNPNWT</a>
 		</div>
