@@ -18,9 +18,8 @@
 <svelte:window bind:scrollY={y} />
 
 <body id="home" data-theme="dracula" class="font-mono">
-	<div class="grid grid-flow-cols-5 gap-4">
-		<dir class="h-24 col-span-5" />
-		<dir class="h-24 col-span-5" />
+	<div class="grid grid-flow-cols-4 gap-4">
+		<dir class="h-48 col-span-5" />
 		<dir class="h-24 w-10" />
 		<div>
 			{#if animate}
@@ -30,10 +29,7 @@
 				</div>
 			{/if}
 		</div>
-		<dir class="h-24 col-span-5" />
-		<dir class="h-24 col-span-5" />
-		<dir class="h-24 col-span-5" />
-		<dir class="h-24 col-span-5" />
+		<dir class="h-96 col-span-5" />
 	</div>
 
 	<dir id="about" class="h-24" />
