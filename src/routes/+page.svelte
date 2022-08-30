@@ -19,7 +19,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<body id="home" data-theme="dracula" class="font-mono">
+<body id="home" data-theme="dracula" class="font-mono bg-[ #373a4d]">
 	<div class="grid grid-flow-cols-4 gap-4">
 		<dir class="h-48 col-span-5" />
 		<dir class="h-24 w-10" />
@@ -27,7 +27,7 @@
 			{#if animate}
 				<div in:fly={{ y: 50, duration: 1500 }}>
 					<p class="text-4xl">Hi! Call me</p>
-					<p class="text-8xl text-accent">Placeholder</p>
+					<p class="text-9xl text-accent">Sun</p>
 				</div>
 			{/if}
 		</div>
@@ -75,7 +75,8 @@
 </body>
 
 <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-	<div>
+	<div class="text-lg">
 		<p>Powered by ME</p>
+		<p id="email">sun.punnawit@gmail.com</p>
 	</div>
 </footer>
