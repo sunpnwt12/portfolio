@@ -1,17 +1,12 @@
-<script>
+<script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { techStack, industries } from '../components/constants';
-	import SkillsBar from '../components/skillsBar.svelte';
+	import { techStack, papers } from '../components/constants';
+	import SkillsBar from '../components/SkillsBar.svelte';
+	import PublicCard from '../components/PublicCard.svelte';
 
-	/**
-	 * @type {boolean}
-	 */
-	let animate = false;
-	/**
-	 * @type {number}
-	 */
-	let y;
+	let animate: boolean = false;
+	let y: number;
 
 	onMount(() => (animate = true));
 
@@ -38,14 +33,16 @@
 		<dir class="h-24 col-span-5" />
 		<dir class="h-24 col-span-5" />
 		<dir class="h-24 col-span-5" />
-		<dir id="about" class="h-24 col-span-5" />
+		<dir class="h-24 col-span-5" />
 	</div>
 
+	<dir id="about" class="h-24" />
 	<h2 class="flex text-6xl justify-center">About Me</h2>
+
 	<div class="flex flex-row justify-center py-8 gap-6">
-		{#each industries as industry}
-			<button class="btn btn-{industry.color} text-xl">{industry.title}</button>
-		{/each}
+		<button class="btn btn-secondary text-xl">Web</button>
+		<button class="btn btn-primary text-xl">ML/DL</button>
+		<button class="btn btn-accent text-xl">Data</button>
 	</div>
 
 	<div class="flex flex-cols-3 gap-8 justify-center py-8">
@@ -71,11 +68,15 @@
 		</div>
 	</div>
 
+	<dir class="h-24" />
 	<h2 id="publication" class="flex text-6xl justify-center">Publication</h2>
+	{#each papers as paper}
+		<PublicCard {paper} />
+	{/each}
 </body>
 
 <footer class="footer footer-center p-4 bg-base-300 text-base-content">
 	<div>
-		<p>Copyright © 2022 Powered by me</p>
+		<p>Powered by ME</p>
 	</div>
 </footer>
