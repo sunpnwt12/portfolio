@@ -1,5 +1,5 @@
 
-export type Contacts = {
+export interface Contacts {
     id: number;
     name: string;
     link: string;
@@ -7,7 +7,7 @@ export type Contacts = {
     behavior: string;
 }
 
-export type TechStack = {
+export interface TechStack {
     id: number;
     type: string;
     industry: string[];
@@ -15,7 +15,7 @@ export type TechStack = {
     imglink: string;
 };
 
-export type Papers = {
+export interface Papers {
     id: number;
     title: string;
     proceedings: string;
@@ -33,7 +33,7 @@ export const contacts = [
 
 export const techStack = [
     // template
-    // {type: "", industry: [], name: "", imglink: ""},
+    // {id: ,type: "", industry: [], name: "", imglink: ""},
     {id: 1, type: "lang", industry: ["Web", "Data", "ML/DL"], name: "Python", imglink: "https://www.vectorlogo.zone/logos/python/python-icon.svg"},
     {id: 2, type: "lang", industry: ["Web"], name: "Typescript", imglink: "https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg"},
     {id: 3, type: "lang", industry: ["Web"], name: "Go", imglink: "https://www.vectorlogo.zone/logos/golang/golang-icon.svg"},
