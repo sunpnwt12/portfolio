@@ -4,9 +4,8 @@
 	export let tech: TechStack;
 	export let techIndustry: string;
 	let isHighlighted: boolean = false;
-	let highlightedTech: TechStack;
 
-	function handleHighlgihtedTech() {
+	function handleHighlightedTech() {
 		if (techIndustry != 'Reset') {
 			if (tech.industry.includes(techIndustry)) {
 				isHighlighted = true;
@@ -17,11 +16,11 @@
 	}
 
 	onMount(() => {
-		handleHighlgihtedTech();
+		handleHighlightedTech();
 	});
 
 	afterUpdate(() => {
-		handleHighlgihtedTech();
+		handleHighlightedTech();
 	});
 </script>
 

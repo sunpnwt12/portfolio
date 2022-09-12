@@ -6,7 +6,8 @@
 	import PublicCard from '../components/PublicCard.svelte';
 
 	let animate: boolean = false;
-	let y: number;
+
+	let scrollY: number;
 
 	onMount(() => (animate = true));
 
@@ -17,7 +18,7 @@
 	let techEditor = techStack.filter((tech) => tech.type == 'editor');
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY />
 
 <body id="home" data-theme="dracula" class="font-mono bg-[ #373a4d]">
 	<div class="grid grid-flow-cols-4 gap-4">
@@ -44,7 +45,7 @@
 		<button class="btn btn-neutral text-xl" on:click={() => (techIndustry = 'Reset')}>Reset</button>
 	</div>
 
-	<div class="flex flex-cols-3 gap-8 justify-center py-8">
+	<div class="flex flex-cols-3 gap-8 justify-around py-8 max-w-7xl mx-auto">
 		<div class="space-y-6">
 			<h3 class="text-4xl text-center">Langauges</h3>
 			{#each techLang as tech}
@@ -69,9 +70,11 @@
 
 	<dir class="h-24" />
 	<h2 id="publication" class="flex text-6xl justify-center">Publication</h2>
-	{#each papers as paper}
-		<PublicCard {paper} />
-	{/each}
+	<div class="flex max-w-7xl mx-auto justify-around">
+		{#each papers as paper}
+			<PublicCard {paper} />
+		{/each}
+	</div>
 </body>
 
 <footer class="footer footer-center p-4 bg-base-300 text-base-content">
