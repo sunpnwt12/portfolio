@@ -2,7 +2,7 @@
 	import { contacts } from './constants';
 </script>
 
-<div class="fixed bottom-48 left-20">
+<div class="fixed bottom-48 left-12">
 	<div class="flex flex-col rounded-xl">
 		{#each contacts as contact}
 			<div class="flex-1 py-4">

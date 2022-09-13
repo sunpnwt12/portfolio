@@ -34,7 +34,7 @@
 
 <svelte:window bind:scrollY />
 
-<body id="home" data-theme="dracula" class="font-mono bg-[ #373a4d]">
+<body id="home" data-theme="dark" class="font-mono bg-[ #373a4d]">
 	<div class="grid grid-flow-cols-4 gap-4">
 		<dir class="h-48 col-span-5" />
 		<dir class="h-24 w-10" />

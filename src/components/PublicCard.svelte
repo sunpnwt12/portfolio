@@ -5,10 +5,10 @@
 
 <div class="flex justify-center py-10">
 	<div
-		class="card w-50 bg-slate-600 shadow-xl border-solid border-2 border-accent hover:scale-105 ease-in duration-300 hover:bg-slate-500"
+		class="card w-50 bg-slate-600 shadow-xl border-solid border-2 border-accent hover:scale-105 ease-in duration-300 hover:bg-slate-500 hover:text-white"
 	>
 		<div class="card-body">
-			<h2 class="card-title text-2xl text-accent-focus">{paper.title}</h2>
+			<h2 class="card-title text-2xl text-accent">{paper.title}</h2>
 			<p class="text-lg"><b>Proceedinds:</b> {paper.proceedings}</p>
 			<p class="text-lg"><b>Published Date:</b> {paper.publishedDate}</p>
 			<div class="card-actions justify-end">
