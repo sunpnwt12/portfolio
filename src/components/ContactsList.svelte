@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Contacts } from './constants';
 	import { contacts } from './constants';
 </script>
 

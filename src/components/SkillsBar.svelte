@@ -1,30 +1,22 @@
 <script lang="ts">
 	import { onMount, afterUpdate } from 'svelte';
 	import type { TechStack } from './constants';
+	import { highlightTechArray } from './stores';
+
 	export let tech: TechStack;
-	export let techIndustry: string;
-	let isHighlighted: boolean = false;
-
-	function handleHighlightedTech() {
-		if (techIndustry != 'Reset') {
-			if (tech.industry.includes(techIndustry)) {
-				isHighlighted = true;
-			}
+	//  let filteredIndus = tech.industry.filter((item) => !$highlightTechArray.includes(item));
+	$: isHighlighted = () => {
+		if (!$highlightTechArray.length) {
+			return false;
 		} else {
-			isHighlighted = false;
+			return $highlightTechArray.some((ele) => {
+				return tech.industry.includes(ele);
+			});
 		}
-	}
-
-	onMount(() => {
-		handleHighlightedTech();
-	});
-
-	afterUpdate(() => {
-		handleHighlightedTech();
-	});
+	};
 </script>
 
-{#if !isHighlighted}
+{#if !isHighlighted()}
 	<div
 		class="border-solid border-2 border-accent box-border h-auto w-80 bg-slate-600 rounded-xl hover:scale-105 ease-in duration-300 hover:bg-slate-500"
 	>
@@ -39,7 +31,7 @@
 	</div>
 {:else}
 	<div
-		class="border-solid border-2 border-primary-focus box-border h-auto w-80 bg-slate-600 rounded-xl hover:scale-105 ease-in duration-300 hover:bg-slate-500"
+		class="border-solid border-2 border-primary box-border h-auto w-80 bg-slate-500 rounded-xl hover:scale-105 ease-in duration-300 hover:bg-slate-500"
 	>
 		<div class="grid grid-cols-2 p-3 gap-1 place-items-center">
 			<div>
